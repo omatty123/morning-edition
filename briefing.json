@@ -1,0 +1,156 @@
+{
+ "updated": "2026-09-30T23:20:00Z",
+ "classes": [
+  {
+   "course": "FRST 110",
+   "days": [
+    1,
+    3,
+    5
+   ],
+   "start": "11:10",
+   "end": "12:20",
+   "time": "11:10 am–12:20 pm"
+  },
+  {
+   "course": "HIST 212",
+   "days": [
+    2,
+    4
+   ],
+   "start": "10:25",
+   "end": "12:10",
+   "time": "10:25 am–12:10 pm"
+  },
+  {
+   "course": "BUEN 594",
+   "days": [
+    2
+   ],
+   "start": "12:40",
+   "end": "14:25",
+   "time": "12:40–2:25 pm"
+  }
+ ],
+ "prep": {
+  "reviewed_at": "2026-09-30T23:20:00Z",
+  "items": [
+   {
+    "date": "2026-10-01",
+    "course": "HIST 212",
+    "title": "Thursday’s class",
+    "ready": true
+   },
+   {
+    "date": "2026-10-05",
+    "course": "FRST 110",
+    "title": "Blood Dazzler",
+    "ready": true
+   },
+   {
+    "date": "2026-10-06",
+    "course": "HIST 212",
+    "title": "Qin & Han",
+    "ready": false
+   },
+   {
+    "date": "2026-10-06",
+    "course": "BUEN 594",
+    "title": "Internship panel",
+    "ready": false
+   }
+  ]
+ },
+ "jogye": {
+  "checked": "2026-10-01T01:44:58.269Z",
+  "items": [
+   {
+    "date": "2026-09-16",
+    "title": "Jogye Order Emergency Relief Team Assists in Recovery Efforts in Flood-Affected Areas of Nepal",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1540"
+   },
+   {
+    "date": "2026-09-09",
+    "title": "Most Ven. Jinwoo Elected as the 38th President of the Jogye Order",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1539"
+   },
+   {
+    "date": "2026-09-07",
+    "title": "[Dharma Talk on the Conclusion of the Summer Retreat in the Year of the Fire Horse]",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1530"
+   },
+   {
+    "date": "2026-09-07",
+    "title": "The Jogye Order of Korean Buddhism Issues Statement on Disaster in Nepal",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1529"
+   }
+  ]
+ },
+ "packers": [
+  {
+   "kickoff": "2026-10-04T12:00:00-05:00",
+   "home": false,
+   "opponent": "Tampa Bay Buccaneers",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#packers-at-buccaneers-2026-reg-4"
+  },
+  {
+   "kickoff": "2026-10-11T12:00:00-05:00",
+   "home": true,
+   "opponent": "Chicago Bears",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#bears-at-packers-2026-reg-5"
+  },
+  {
+   "kickoff": "2026-10-18T19:20:00-05:00",
+   "home": true,
+   "opponent": "Dallas Cowboys",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#cowboys-at-packers-2026-reg-6"
+  },
+  {
+   "kickoff": "2026-10-25T15:25:00-05:00",
+   "home": false,
+   "opponent": "Detroit Lions",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#packers-at-lions-2026-reg-7"
+  },
+  {
+   "kickoff": "2026-10-29T19:15:00-05:00",
+   "home": true,
+   "opponent": "Carolina Panthers",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#panthers-at-packers-2026-reg-8"
+  },
+  {
+   "kickoff": "2026-11-08T15:25:00-06:00",
+   "home": false,
+   "opponent": "New England Patriots",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#packers-at-patriots-2026-reg-9"
+  },
+  {
+   "kickoff": "2026-11-15T12:00:00-06:00",
+   "home": true,
+   "opponent": "Minnesota Vikings",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#vikings-at-packers-2026-reg-10"
+  },
+  {
+   "kickoff": "2026-11-25T19:00:00-06:00",
+   "home": false,
+   "opponent": "Los Angeles Rams",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/#packers-at-rams-2026-reg-12"
+  }
+ ],
+ "events": [
+  {
+   "date": "2026-10-03",
+   "when": "October 3 · noon–2 pm CT · online",
+   "title": "Mark Solms, in conversation with history",
+   "subtitle": "From Neuroscience and Psychoanalysis to Neuropsychoanalysis: A History",
+   "url": "https://npsa-association.org/events/from-neuroscience-and-psychoanalysis-to-neuropsychoanalysis-a-history/"
+  }
+ ]
+}

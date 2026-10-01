@@ -1,0 +1,390 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Morning Edition · 부엉이</title>
+<meta name="description" content="A personal morning planner from Appleton, Wisconsin. Teaching, weather, our teams, and the life of the mind.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Morning Edition">
+<meta property="og:description" content="A personal morning planner from Appleton, Wisconsin. Teaching, weather, our teams, and the life of the mind.">
+<meta property="og:url" content="https://omatty123.github.io/morning-edition/">
+<meta property="og:image" content="https://omatty123.github.io/morning-edition/og.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://omatty123.github.io/morning-edition/og.png">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2317384c'/%3E%3Ccircle cx='16' cy='13' r='6' fill='%23d6b778'/%3E%3Cpath d='M5 23h22M8 27h16' stroke='%23f8f9f8' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f7f4ed; --ink:#243e35; --muted:#61675e; --primary:#af3f28; --secondary:#ecebdc;
+  --accent:#e3ebda; --line:#d0d2c4; --sports:#ebdfa6; --ready:#2f6b3f; --todo:#8a5a12;
+  --hist:#9a6a16; --frst:#7a4fa0; --buen:#2f6b4f;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 Manrope,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:"Bricolage Grotesque",Manrope,sans-serif;margin:0;letter-spacing:-.01em}
+.wrap{width:min(1420px,calc(100% - 64px));margin:0 auto}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:6px 10px;z-index:9}
+svg.i{width:14px;height:14px;vertical-align:-2px;flex:none}
+.arrow{color:var(--muted)}
+
+/* masthead */
+.mast{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:baseline;gap:14px;min-width:0}
+.brand h1{font-size:28px}
+.brand h1 b{color:var(--primary)}
+.brand small{font-size:12px;color:var(--muted)}
+.nav{display:flex;gap:10px;align-items:center;flex:none}
+.nav a{font-weight:700;font-size:13px;display:inline-flex;gap:6px;align-items:center;padding:7px 10px}
+.nav a.btn{border:1px solid var(--ink);border-radius:4px}
+
+/* greeting row */
+.hello{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:18px 0;border-bottom:1px solid var(--line)}
+.hello h2{font-size:24px}
+.hello .now{font-size:13px;color:var(--muted);margin-top:4px;display:flex;gap:14px}
+.wx{display:flex;align-items:center;gap:12px;text-align:right}
+.wx .temp{font-family:"Bricolage Grotesque",sans-serif;font-size:30px;font-weight:700}
+.wx .icon svg{width:30px;height:30px;color:var(--primary)}
+.wx .desc{font-size:13px;text-align:left}
+.wx .desc div:last-child{color:var(--muted);font-size:12px;display:flex;gap:8px}
+.wx-note{font-size:12px;color:var(--muted);text-align:right;margin-top:4px}
+
+/* grid */
+.grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.95fr);gap:32px;padding:18px 0 22px}
+.grid>*{min-width:0}
+.sec-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 6px}
+.sec-head h2{font-size:21px}
+.note{font-size:12px;color:var(--muted)}
+
+/* classes */
+.toggle{display:inline-flex;background:var(--secondary);border-radius:4px;padding:3px}
+.toggle button{font:inherit;font-size:13px;font-weight:600;border:0;background:none;padding:4px 12px;border-radius:3px;cursor:pointer;color:var(--muted)}
+.toggle button[aria-pressed=true]{background:#fff;color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.when{color:var(--primary);font-weight:700;font-size:13px;margin:4px 0 10px}
+.days{display:grid;grid-template-columns:repeat(5,1fr) auto;gap:4px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:6px}
+.days button{font:inherit;font-size:13px;border:0;background:none;padding:7px 0;border-radius:3px;cursor:pointer;color:var(--muted)}
+.days button[aria-pressed=true]{background:var(--primary);color:#fff;font-weight:700}
+.days .upnext{text-decoration:underline;text-underline-offset:3px;padding:7px 8px}
+.cls{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line);font-weight:700}
+.cls span:first-child::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--dot,var(--hist));margin-right:10px;vertical-align:1px}
+.cls.past{opacity:.45}
+.weekday{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:10px}
+.cls-foot{display:flex;justify-content:space-between;gap:12px;margin-top:8px;font-size:12px;color:var(--muted)}
+.cls-foot a{color:var(--primary);font-weight:700;font-size:13px;white-space:nowrap}
+
+/* desk */
+.desk{margin-top:24px}
+.prep{display:grid;grid-template-columns:52px minmax(0,1fr) auto;gap:4px 12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.prep:first-of-type{border-top:1px solid var(--line)}
+.prep .d{color:var(--primary);font-weight:700;font-size:13px}
+.prep .c{font-size:12px;font-weight:700}
+.prep .t{font-size:15px}
+.prep .s{font-size:13px;font-weight:700;display:flex;gap:8px;align-items:center;white-space:nowrap}
+.prep .s.ok{color:var(--ready)} .prep .s.todo{color:var(--todo)}
+.c-HIST{color:var(--hist)} .c-FRST{color:var(--frst)} .c-BUEN{color:var(--buen)}
+
+/* sports */
+.sports{margin-top:24px;background:var(--sports);border-radius:4px;padding:14px 16px}
+.teams{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.team h3{font-size:16px;display:flex;align-items:center;gap:8px;margin:6px 0 4px}
+.team h3 i{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font:700 12px Manrope;color:#fff}
+.game{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid rgba(36,62,53,.18);font-size:13px}
+.game b{font-weight:700}
+.game .r{text-align:right;font-weight:700;white-space:nowrap}
+.game small{display:block;color:var(--muted);font-weight:400}
+
+/* right column */
+figure{margin:0}
+figure img{width:100%;height:auto;aspect-ratio:1200/405;object-fit:cover;display:block;border-radius:2px}
+figcaption{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:6px}
+figcaption a{text-decoration:underline;text-underline-offset:2px}
+.look{margin-top:18px}
+.look>.sec-head{border-bottom:2px solid var(--ink);padding-bottom:8px}
+.rail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;margin-top:10px}
+.rail>div+div{border-left:1px solid var(--line);padding-left:20px}
+.rail section+section{border-top:1px solid var(--line);margin-top:14px;padding-top:12px}
+.rail h3{font:700 13px Manrope;color:var(--primary);margin-bottom:6px;display:flex;justify-content:space-between}
+.entry{display:block;margin:8px 0 10px}
+.entry .m{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.entry .tt{font-size:17px;line-height:1.3;margin-top:2px}
+.entry:hover .tt{text-decoration:underline;text-underline-offset:3px}
+.entry .fl{font-size:12px;color:var(--muted);margin-top:2px}
+.rail-link{color:var(--primary);font-weight:700;font-size:13px;display:inline-flex;gap:4px;align-items:center}
+.event{display:block;margin-top:16px;background:var(--accent);border-radius:4px;padding:12px 14px}
+.event .top{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--muted)}
+.event .top svg:last-child{margin-left:auto}
+.event h3{font-size:16px;margin-top:6px}
+.event p{margin:2px 0 0;font-size:13px}
+
+footer{display:flex;align-items:center;gap:20px;border-top:1px solid var(--line);padding:14px 0 28px;font-size:12px;color:var(--muted)}
+footer button{font:inherit;font-size:13px;border:1px solid var(--line);background:#fff8;border-radius:4px;padding:6px 12px;cursor:pointer;display:inline-flex;gap:6px;align-items:center;color:var(--ink)}
+
+@media (max-width:900px){
+  .wrap{width:calc(100% - 32px)}
+  .grid{display:flex;flex-direction:column;gap:0}
+  .left,.right{display:contents}
+  figure{order:-1;margin-bottom:20px}
+  .look{order:1;margin-top:24px}
+  .brand small{display:none}
+  .hello{flex-direction:column;gap:10px}
+  .wx{text-align:left} .wx-note{text-align:left}
+  .rail{grid-template-columns:minmax(0,1fr)}
+  .rail>div+div{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:12px}
+}
+@media (max-width:520px){
+  .brand h1{font-size:23px}
+  .nav a:not(.btn){display:none}
+  .teams{grid-template-columns:minmax(0,1fr)}
+  .days button{font-size:12px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#planner">Skip to planner</a>
+<div class="wrap">
+  <header class="mast">
+    <div class="brand"><h1><a href="./">Morning Edition<b>.</b></a></h1><small>부엉이가 만든 플래너</small></div>
+    <nav class="nav">
+      <a href="https://omatty123.github.io/levin-solms-desk/">Reading desk <svg class="i"><use href="#arr"/></svg></a>
+      <a class="btn" href="https://teaching-fall-2026-roster.pages.dev/instructor/fall-2026/">TeachingHQ <svg class="i"><use href="#arr"/></svg></a>
+    </nav>
+  </header>
+
+  <section class="hello">
+    <div><h2 id="greet">A new day, Appleton.</h2><div class="now"><span id="today"></span><span id="clock"></span></div></div>
+    <div>
+      <div class="wx" id="wx"><span class="icon" id="wx-icon"></span><span class="temp" id="wx-temp">—</span>
+        <div class="desc"><div id="wx-desc">Loading forecast…</div><div><span id="wx-wind"></span><a href="https://forecast.weather.gov/MapClick.php?lat=44.2619&lon=-88.4154">NWS <svg class="i"><use href="#arr"/></svg></a></div></div></div>
+      <div class="wx-note" id="wx-note"></div>
+    </div>
+  </section>
+
+  <main class="grid" id="planner">
+    <div class="left">
+      <section>
+        <div class="sec-head"><h2>Next classes</h2>
+          <div class="toggle" role="group" aria-label="View"><button data-view="day" aria-pressed="true">Day</button><button data-view="week" aria-pressed="false">Week</button></div></div>
+        <div class="when" id="when"></div>
+        <div class="days" id="days"></div>
+        <div id="classes"></div>
+        <div class="cls-foot"><span>Regular pattern · CT · Breaks and changes aren’t reflected.</span><a href="https://teaching-fall-2026-roster.pages.dev/instructor/fall-2026/">TeachingHQ <svg class="i"><use href="#arr"/></svg></a></div>
+      </section>
+
+      <section class="desk">
+        <div class="sec-head"><h2>On your desk</h2><span class="note" id="desk-note"></span></div>
+        <div id="prep"></div>
+      </section>
+
+      <section class="sports">
+        <div class="sec-head"><h2>After class</h2><span class="note">All times Central</span></div>
+        <div class="teams">
+          <div class="team"><h3><i style="background:#12284b">M</i>Brewers</h3><div id="brewers"></div><p class="note" id="brewers-note"></p></div>
+          <div class="team"><h3><i style="background:#203731">G</i>Packers</h3><div id="packers"></div><p class="note" id="packers-note"></p></div>
+        </div>
+        <p class="note" style="margin:6px 0 0">Game dates and times can change. Unconfirmed opponents and start times stay marked TBD.</p>
+      </section>
+    </div>
+
+    <div class="right">
+      <figure>
+        <img src="photos/appleton-sunset.jpg" width="1200" height="405" alt="Appleton at sunset, with Lawrence University's Main Hall and the Fox River in the foreground">
+        <figcaption><span>Appleton, after hours.</span><a href="https://grahamimages.net/">Photo: Graham Images</a></figcaption>
+      </figure>
+
+      <section class="look">
+        <div class="sec-head"><h2>Worth a look</h2></div>
+        <div class="rail">
+          <div>
+            <section>
+              <h3><span>Levin &amp; Solms</span><a href="https://omatty123.github.io/levin-solms-desk/" aria-label="Reading desk"><svg class="i"><use href="#arr"/></svg></a></h3>
+              <div id="desk"></div>
+              <a class="rail-link" href="https://omatty123.github.io/levin-solms-desk/">Full reading desk <svg class="i"><use href="#arr"/></svg></a>
+              <p class="note" id="desk-src"></p>
+            </section>
+          </div>
+          <div>
+            <section>
+              <h3>Korean Buddhism</h3>
+              <div id="jogye"></div>
+              <a class="rail-link" href="https://www.jokb.org/bbs/board.php?bo_table=0010">More from the Jogye Order <svg class="i"><use href="#arr"/></svg></a>
+              <p class="note" id="jogye-note"></p>
+            </section>
+            <section>
+              <h3>Forms of life, forms of mind</h3>
+              <div id="levin"></div>
+              <a class="rail-link" href="https://thoughtforms.life/">Michael Levin’s notebook <svg class="i"><use href="#arr"/></svg></a>
+              <p class="note" id="levin-note"></p>
+            </section>
+          </div>
+        </div>
+        <div id="events"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer><span>Forecasts, games and reading refresh on opening.<br>Last successful source times stay visible.</span>
+    <button id="refresh"><svg class="i"><use href="#ref"/></svg>Refresh sources</button>
+    <span style="margin-left:auto">부엉이가 만든 플래너</span></footer>
+</div>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="ref" viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="chk" viewBox="0 0 24 24"><path d="m5 12 5 5 9-10" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="todo" viewBox="0 0 24 24"><circle cx="12" cy="12" r="7" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="moon" viewBox="0 0 24 24"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 11a3.5 3.5 0 0 0 1 7Z" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+  <symbol id="rain" viewBox="0 0 24 24"><path d="M7 15h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 8a3.5 3.5 0 0 0 1 7Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 18l-1 3M12 18l-1 3M16 18l-1 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="fog" viewBox="0 0 24 24"><path d="M7 13h10a3.5 3.5 0 0 0 .4-7A5.5 5.5 0 0 0 6.6 7.4 3 3 0 0 0 7 13Z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 17h16M7 21h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+</svg>
+
+<script>
+const TZ="America/Chicago";
+const DESK="https://omatty123.github.io/levin-solms-desk/data.json";
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const arr='<svg class="i arrow"><use href="#arr"/></svg>';
+const icon=n=>`<svg class="i"><use href="#${n}"/></svg>`;
+
+// --- Central-time helpers ---
+function ct(d=new Date()){const p=Object.fromEntries(new Intl.DateTimeFormat("en-US",{timeZone:TZ,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",weekday:"short",hourCycle:"h23"}).formatToParts(d).map(x=>[x.type,x.value]));
+  return {ymd:`${p.year}-${p.month}-${p.day}`,h:+p.hour,m:+p.minute,dow:["Sun","Mon","Tue","Wed","Thu","Fri","Sat"].indexOf(p.weekday)}}
+const fmt=(d,o)=>new Intl.DateTimeFormat("en-US",{timeZone:TZ,...o}).format(d);
+const ymdDate=s=>new Date(s+"T12:00:00-05:00");
+const addDays=(s,n)=>{const d=ymdDate(s);d.setUTCDate(d.getUTCDate()+n);return ct(d).ymd};
+const short=s=>fmt(ymdDate(s),{month:"short",day:"numeric"});
+const checked=t=>t?`Checked ${fmt(new Date(t),{month:"short",day:"numeric"})}, ${fmt(new Date(t),{hour:"numeric",minute:"2-digit"})} CT`:"";
+
+// last-good cache so a failed source still shows its last result
+const cache={get(k){try{return JSON.parse(localStorage.getItem("me:"+k))}catch(e){return null}},set(k,v){try{localStorage.setItem("me:"+k,JSON.stringify(v))}catch(e){}}};
+async function source(key,load){
+  try{const data=await load();const v={data,at:new Date().toISOString()};cache.set(key,v);return {...v,ok:true}}
+  catch(e){const v=cache.get(key);return v?{...v,ok:false}:{data:null,ok:false}}
+}
+const srcNote=(r,at)=>r.data?checked(at||r.at)+(r.ok?"":" · refresh unavailable"):"Unavailable right now";
+
+// --- header ---
+function tick(){const n=new Date(),c=ct(n);
+  $("greet").textContent=(c.h<5?"A new day":c.h<12?"Good morning":c.h<17?"Good afternoon":"Good evening")+", Appleton.";
+  $("today").textContent=fmt(n,{weekday:"short",month:"short",day:"numeric"});
+  $("clock").textContent=fmt(n,{hour:"numeric",minute:"2-digit",timeZoneName:"short"});}
+
+// --- classes ---
+let B=null, view="day", picked=null;
+const DOW=["Mon","Tue","Wed","Thu","Fri"];
+const mins=s=>{const[h,m]=s.split(":").map(Number);return h*60+m};
+function classesOn(dow){return (B?.classes||[]).filter(c=>c.days.includes(dow)).sort((a,b)=>mins(a.start)-mins(b.start))}
+function nextClassDay(){const c=ct(),now=c.h*60+c.m;
+  for(let i=0;i<8;i++){const ymd=addDays(c.ymd,i),dow=ct(ymdDate(ymd)).dow;
+    const list=classesOn(dow).filter(x=>i>0||mins(x.end)>now);if(list.length)return {ymd,dow,offset:i}}
+  return null}
+function renderClasses(){
+  const c=ct(),nx=nextClassDay(),now=c.h*60+c.m;
+  document.querySelectorAll(".toggle button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.view===view));
+  const sel=picked??nx?.dow;
+  $("days").style.display=view==="day"?"":"none";
+  $("days").innerHTML=DOW.map((d,i)=>`<button data-dow="${i+1}" aria-pressed="${sel===i+1}">${d}</button>`).join("")+`<button class="upnext" data-dow="">Up next</button>`;
+  if(view==="week"){
+    $("when").textContent="This week";
+    $("classes").innerHTML=DOW.map((d,i)=>{const l=classesOn(i+1);return l.length?`<div class="weekday">${d}</div>`+l.map(x=>`<div class="cls ${i+1===c.dow&&mins(x.end)<=now||i+1<c.dow?"past":""}"><span class="c-${x.course.split(" ")[0]}">${esc(x.course)}</span><span>${esc(x.time)}</span></div>`).join(""):""}).join("");
+  }else{
+    let label="";
+    if(picked==null&&nx){const d=fmt(ymdDate(nx.ymd),{weekday:"short",month:"short",day:"numeric"});label=(nx.offset===0?"Today":nx.offset===1?"Tomorrow":"Next")+" · "+d}
+    else if(picked!=null){label=["","Monday","Tuesday","Wednesday","Thursday","Friday"][picked]+"s"}
+    $("when").textContent=label;
+    const list=classesOn(sel);
+    $("classes").innerHTML=list.length?list.map(x=>`<div class="cls"><span>${esc(x.course)}</span><span>${esc(x.time)}</span></div>`).join(""):`<div class="cls" style="font-weight:400;color:var(--muted)">No classes</div>`;
+  }
+  // color the dot per course
+  document.querySelectorAll("#classes .cls span:first-child").forEach(s=>{const k=s.textContent.split(" ")[0];s.style.setProperty("--dot",`var(--${k.toLowerCase()})`)});
+}
+document.querySelector(".toggle").onclick=e=>{const b=e.target.closest("button");if(b){view=b.dataset.view;renderClasses()}};
+$("days").onclick=e=>{const b=e.target.closest("button");if(b){picked=b.dataset.dow?+b.dataset.dow:null;renderClasses()}};
+
+// --- prep ---
+function renderPrep(){
+  const p=B.prep,today=ct().ymd,items=p.items.filter(i=>i.date>=today);
+  $("desk-note").textContent=p.reviewed_at?"Verified "+fmt(new Date(p.reviewed_at),{month:"short",day:"numeric"}):"";
+  $("prep").innerHTML=items.length?items.map(i=>`<a class="prep" href="${esc(i.url||"https://teaching-fall-2026-roster.pages.dev/instructor/fall-2026/")}">
+    <span class="d">${short(i.date)}</span>
+    <span><span class="c c-${esc(i.course.split(" ")[0])}">${esc(i.course)}</span><br><span class="t">${esc(i.title)}</span></span>
+    <span class="s ${i.ready?"ok":"todo"}">${icon(i.ready?"chk":"todo")}${i.ready?"Approved":"To prepare"}${arr}</span></a>`).join(""):`<p class="note">Nothing on the desk.</p>`;
+}
+
+// --- sports ---
+function gameRow({when,tbd,home,opp,url,label}){
+  const d=new Date(when);
+  return `<a class="game" href="${esc(url)}"><span>${home?"vs.":"at"} <b>${esc(opp)}</b><small>${label?esc(label)+" · ":""}${fmt(d,{weekday:"short",month:"short",day:"numeric"})}</small></span>
+    <span class="r">${tbd?"Time TBD":fmt(d,{hour:"numeric",minute:"2-digit"})}${tbd?"":`<small>${fmt(d,{timeZoneName:"short"}).split(" ").pop()}</small>`}</span></a>`}
+function renderPackers(){
+  const now=Date.now()-4*3600e3;
+  const g=B.packers.filter(x=>new Date(x.kickoff).getTime()>now).slice(0,2);
+  $("packers").innerHTML=g.map(x=>gameRow({when:x.kickoff,tbd:x.tbd,home:x.home,opp:x.opponent,url:x.url})).join("")||`<p class="note">No games scheduled.</p>`;
+  $("packers-note").textContent=checked(B.updated);
+}
+async function loadBrewers(){
+  const c=ct(),end=addDays(c.ymd,30);
+  const r=await source("brewers",async()=>{const j=await (await fetch(`https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=158&startDate=${c.ymd}&endDate=${end}&hydrate=team`)).json();
+    return j.dates.flatMap(d=>d.games).map(g=>{const home=g.teams.home.team.id===158,o=home?g.teams.away.team:g.teams.home.team;
+      return {when:g.gameDate,tbd:!!g.status.startTimeTBD,home,opp:o.abbreviation||o.teamName||o.name,label:g.gameType==="R"?"":(g.description||g.seriesDescription||"").replace(/ '[A-Z]'/,""),url:"https://www.mlb.com/brewers/schedule",state:g.status.abstractGameState}})});
+  const g=(r.data||[]).filter(x=>x.state!=="Final").slice(0,2);
+  $("brewers").innerHTML=g.map(gameRow).join("")||`<p class="note">No games in the next month.</p>`;
+  $("brewers-note").textContent=srcNote(r);
+}
+
+// --- weather ---
+async function loadWeather(){
+  const r=await source("weather",async()=>{const j=await (await fetch("https://api.weather.gov/gridpoints/GRB/66,20/forecast",{headers:{Accept:"application/geo+json"}})).json();return j.properties.periods[0]});
+  const p=r.data;if(!p){$("wx-desc").textContent="Forecast unavailable";return}
+  const f=p.shortForecast.toLowerCase();
+  const ic=/rain|shower|storm|drizzle/.test(f)?"rain":/fog|haze|smoke/.test(f)?"fog":/cloud|overcast/.test(f)&&!/partly|mostly clear|mostly sunny/.test(f)?"cloud":p.isDaytime?"sun":"moon";
+  $("wx-icon").innerHTML=`<svg><use href="#${ic}"/></svg>`;
+  $("wx-temp").textContent=p.temperature+"°"+p.temperatureUnit;
+  $("wx-desc").textContent=`${p.name} · ${p.shortForecast}`;
+  $("wx-wind").textContent=`${p.windSpeed} ${p.windDirection}`;
+  $("wx-note").textContent=srcNote(r);
+}
+
+// --- reading ---
+const entry=(who,date,title,url,flag)=>`<a class="entry" href="${esc(url)}"><div class="m"><span>${esc(who)}</span><span>${short(date)}</span></div><div class="tt">${esc(title)}</div>${flag?`<div class="fl">${esc(flag)}</div>`:""}</a>`;
+async function loadDesk(){
+  const r=await source("desk",async()=>(await fetch(DESK,{cache:"no-store"})).json());
+  if(!r.data){$("desk").innerHTML="";$("desk-src").textContent=srcNote(r);return}
+  const items=[...r.data.items].sort((a,b)=>b.date.localeCompare(a.date));
+  const pick=["levin","solms"].map(w=>items.find(i=>i.who===w)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date));
+  $("desk").innerHTML=pick.map(i=>entry(i.who==="levin"?"Michael Levin":"Mark Solms",i.date,i.title,i.url,i.flag)).join("");
+  $("desk-src").textContent=srcNote(r,r.data.last_checked);
+}
+async function loadLevin(){
+  const r=await source("levin",async()=>{const j=await (await fetch("https://thoughtforms.life/wp-json/wp/v2/posts?per_page=1&_fields=title,link,date")).json();
+    const t=document.createElement("textarea");t.innerHTML=j[0].title.rendered;return {title:t.value,url:j[0].link,date:j[0].date.slice(0,10)}});
+  $("levin").innerHTML=r.data?entry("Michael Levin",r.data.date,r.data.title,r.data.url):"";
+  $("levin-note").textContent=srcNote(r);
+}
+function renderJogye(){
+  $("jogye").innerHTML=B.jogye.items.slice(0,2).map(i=>entry("Jogye Order",i.date,i.title,i.url)).join("");
+  $("jogye-note").textContent=checked(B.jogye.checked);
+}
+function renderEvents(){
+  const today=ct().ymd;
+  $("events").innerHTML=(B.events||[]).filter(e=>e.date>=today).map(e=>`<a class="event" href="${esc(e.url)}"><div class="top">${icon("cal")}<span>${esc(e.when)}</span>${arr}</div><h3>${esc(e.title)}</h3>${e.subtitle?`<p>${esc(e.subtitle)}</p>`:""}</a>`).join("");
+}
+
+async function loadAll(){
+  const btn=$("refresh");btn.disabled=true;
+  try{B=await (await fetch("briefing.json",{cache:"no-store"})).json();cache.set("briefing",B)}catch(e){B=cache.get("briefing")}
+  if(B){renderClasses();renderPrep();renderPackers();renderJogye();renderEvents()}
+  await Promise.all([loadWeather(),loadBrewers(),loadDesk(),loadLevin()]);
+  btn.disabled=false;
+}
+$("refresh").onclick=loadAll;
+tick();setInterval(()=>{tick()},30000);
+loadAll();
+</script>
+</body>
+</html>
