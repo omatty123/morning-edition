@@ -1,5 +1,5 @@
 {
- "updated": "2026-09-30T23:20:00Z",
+ "updated": "2026-10-01T02:16:36.393Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -38,8 +38,9 @@
    {
     "date": "2026-10-01",
     "course": "HIST 212",
-    "title": "Thursday’s class",
-    "ready": true
+    "title": "Xunzi, Lord Shang & Han Feizi",
+    "ready": true,
+    "url": "https://drive.google.com/file/d/1Y426EWeCiphSUSY-Phh9vrf3uR8wvu1L/view"
    },
    {
     "date": "2026-10-05",
@@ -62,7 +63,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-10-01T01:44:58.269Z",
+  "checked": "2026-10-01T01:55:25Z",
   "items": [
    {
     "date": "2026-09-16",
@@ -83,6 +84,16 @@
     "date": "2026-09-07",
     "title": "The Jogye Order of Korean Buddhism Issues Statement on Disaster in Nepal",
     "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1529"
+   },
+   {
+    "date": "2026-09-07",
+    "title": "Eighth Graduation Ceremony Successfully Held at Borigaram Agricultural Technical College in Tanzania",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1528"
+   },
+   {
+    "date": "2026-08-10",
+    "title": "Temple Cuisine Banquet Commemorating the UNESCO World Heritage Committee Meeting Concludes Successfully",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1519"
    }
   ]
  },
@@ -142,6 +153,41 @@
    "opponent": "Los Angeles Rams",
    "tbd": false,
    "url": "https://www.packers.com/schedule/#packers-at-rams-2026-reg-12"
+  },
+  {
+   "kickoff": "2026-12-06T12:00:00-06:00",
+   "home": false,
+   "opponent": "New Orleans Saints",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/"
+  },
+  {
+   "kickoff": "2026-12-13T19:20:00-06:00",
+   "home": true,
+   "opponent": "Buffalo Bills",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/"
+  },
+  {
+   "kickoff": "2026-12-20T12:00:00-06:00",
+   "home": true,
+   "opponent": "Miami Dolphins",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/"
+  },
+  {
+   "kickoff": "2026-12-25T12:00:00-06:00",
+   "home": false,
+   "opponent": "Chicago Bears",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/"
+  },
+  {
+   "kickoff": "2027-01-04T19:15:00-06:00",
+   "home": true,
+   "opponent": "Houston Texans",
+   "tbd": false,
+   "url": "https://www.packers.com/schedule/"
   }
  ],
  "events": [
