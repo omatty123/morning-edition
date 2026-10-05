@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-04T13:39:05.636Z",
+ "updated": "2026-10-05T13:25:37.512Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -63,7 +63,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-10-04T13:39:05.636Z",
+  "checked": "2026-10-05T13:25:37.512Z",
   "items": [
    {
     "date": "2026-09-16",
@@ -98,13 +98,6 @@
   ]
  },
  "packers": [
-  {
-   "kickoff": "2026-10-04T12:00:00-05:00",
-   "home": false,
-   "opponent": "Tampa Bay Buccaneers",
-   "tbd": false,
-   "url": "https://www.packers.com/schedule/#packers-at-buccaneers-2026-reg-4"
-  },
   {
    "kickoff": "2026-10-11T12:00:00-05:00",
    "home": true,
