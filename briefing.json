@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-07T13:44:34.634Z",
+ "updated": "2026-10-08T13:14:17.713Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -33,7 +33,7 @@
   }
  ],
  "prep": {
-  "reviewed_at": "2026-10-07T13:44:34.634Z",
+  "reviewed_at": "2026-10-08T13:14:17.713Z",
   "items": [
    {
     "date": "2026-10-01",
@@ -70,18 +70,57 @@
     "date": "2026-10-08",
     "course": "HIST 212",
     "title": "Han Empire and Dong Zhongshu’s Synthesis",
-    "ready": false
+    "ready": false,
+    "url": "https://drive.google.com/file/d/16mtYEgKFry8Ss7blZJmW6holWxDB8wbk/view"
    },
    {
     "date": "2026-10-09",
     "course": "FRST 110",
     "title": "Blood Dazzler · Patricia Smith, pp. 50–77",
     "ready": false
+   },
+   {
+    "date": "2026-10-12",
+    "course": "FRST 110",
+    "title": "Community event with Patricia Smith",
+    "ready": false
+   },
+   {
+    "date": "2026-10-13",
+    "course": "HIST 212",
+    "title": "House of FO · Buddhism, Family, and Ruler in China and Korea",
+    "ready": false,
+    "url": "https://drive.google.com/file/d/1DgdxWmNkDr22Sze26MjL-juHOmhtmLPF/view"
+   },
+   {
+    "date": "2026-10-13",
+    "course": "BUEN 594",
+    "title": "Personal branding, social media, and LinkedIn workshop",
+    "ready": false
+   },
+   {
+    "date": "2026-10-14",
+    "course": "FRST 110",
+    "title": "Delta blues",
+    "ready": false
+   },
+   {
+    "date": "2026-10-15",
+    "course": "HIST 212",
+    "title": "Sui/Tang and Korean/Japanese adaptations",
+    "ready": false,
+    "url": "https://drive.google.com/file/d/1VdnUTGaStYb1Sk6LWZ-mbJZeTigselsM/view"
+   },
+   {
+    "date": "2026-10-16",
+    "course": "FRST 110",
+    "title": "Delta blues",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-07T13:44:34.634Z",
+  "checked": "2026-10-08T13:14:17.713Z",
   "items": [
    {
     "date": "2026-09-16",
@@ -208,6 +247,13 @@
    "title": "Mark Solms, in conversation with history",
    "subtitle": "From Neuroscience and Psychoanalysis to Neuropsychoanalysis: A History",
    "url": "https://npsa-association.org/events/from-neuroscience-and-psychoanalysis-to-neuropsychoanalysis-a-history/"
+  },
+  {
+   "date": "2026-10-10",
+   "when": "October 9–10 · Appleton",
+   "title": "Blue & White Homecoming Weekend",
+   "subtitle": "Lawrence University · games and musical performances",
+   "url": "https://www.lawrence.edu/event/blue-white-homecoming-weekend-2026/"
   }
  ]
 }
