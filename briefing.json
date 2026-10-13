@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-12T13:59:12.228Z",
+ "updated": "2026-10-13T13:57:19.087Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -116,12 +116,36 @@
     "course": "FRST 110",
     "title": "Delta blues",
     "ready": false
+   },
+   {
+    "date": "2026-10-20",
+    "course": "HIST 212",
+    "title": "Great Imperial Debate",
+    "ready": false,
+    "url": "https://docs.google.com/document/d/13BIfQl_sroVzHtvS5qOiQwQl_bwXq3hUxROFWcpKVpw/edit"
+   },
+   {
+    "date": "2026-10-20",
+    "course": "BUEN 594",
+    "title": "Résumés, cover letters, professional communication, ethical AI use; document workshop",
+    "ready": false
+   },
+   {
+    "date": "2026-10-21",
+    "course": "FRST 110",
+    "title": "Community event: The blues · Lawrence faculty and Preston Parker",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-12T13:59:12.228Z",
+  "checked": "2026-10-13T13:57:19.087Z",
   "items": [
+   {
+    "date": "2026-10-13",
+    "title": "Most Ven. Jinwoo Inaugurated as the 38th President of the Jogye Order",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1543"
+   },
    {
     "date": "2026-09-16",
     "title": "Jogye Order Emergency Relief Team Assists in Recovery Efforts in Flood-Affected Areas of Nepal",
@@ -146,11 +170,6 @@
     "date": "2026-09-07",
     "title": "Eighth Graduation Ceremony Successfully Held at Borigaram Agricultural Technical College in Tanzania",
     "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1528"
-   },
-   {
-    "date": "2026-08-10",
-    "title": "Temple Cuisine Banquet Commemorating the UNESCO World Heritage Committee Meeting Concludes Successfully",
-    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1519"
    }
   ]
  },
