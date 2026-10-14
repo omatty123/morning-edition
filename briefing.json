@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-13T13:57:19.087Z",
+ "updated": "2026-10-14T13:29:04.380Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -139,7 +139,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-10-13T13:57:19.087Z",
+  "checked": "2026-10-14T13:29:04.380Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -273,6 +273,20 @@
    "title": "Mark Solms: The Only Cure",
    "subtitle": "Contemporary Freudian Society · $95 general admission · recording available",
    "url": "https://contemporaryfreudiansociety.org/event/the-only-cure/"
+  },
+  {
+   "date": "2026-10-29",
+   "when": "October 29 · online · free registration closes October 20",
+   "title": "Michael Levin & Chris Fields: Where do embodied minds come from?",
+   "subtitle": "IOCPh 2026 keynote on the origins and scaling of embodied minds",
+   "url": "https://sciforum.net/event/IOCPh2026"
+  },
+  {
+   "date": "2026-11-12",
+   "when": "November 12 · noon–2 pm CT · online · paid registration",
+   "title": "Mark Solms: Legacy Interview",
+   "subtitle": "MINDinMIND · with Jane O’Rourke and guests · recording included",
+   "url": "https://mindinmind.org.uk/series/mark-solms-legacy-series/"
   }
  ]
 }
