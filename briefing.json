@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-15T13:47:47.681Z",
+ "updated": "2026-10-16T13:27:52.354Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -161,11 +161,17 @@
     "title": "Heian and Early Goryeo · Two Aristocratic Courts",
     "ready": false,
     "url": "https://drive.google.com/file/d/1B4srkBeYlw4c8OnuNTGRbAoBjNitvOIB/view?usp=drivesdk"
+   },
+   {
+    "date": "2026-10-30",
+    "course": "FRST 110",
+    "title": "Equiano · III–IV",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-15T13:46:27.558Z",
+  "checked": "2026-10-16T13:25:43.141Z",
   "items": [
    {
     "date": "2026-10-13",
