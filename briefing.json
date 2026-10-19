@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-18T13:54:12.653Z",
+ "updated": "2026-10-19T14:04:10.974Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -171,7 +171,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-10-18T13:54:12.653Z",
+  "checked": "2026-10-19T14:04:10.974Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -206,13 +206,6 @@
   ]
  },
  "packers": [
-  {
-   "kickoff": "2026-10-18T19:20:00-05:00",
-   "home": true,
-   "opponent": "Dallas Cowboys",
-   "tbd": false,
-   "url": "https://www.packers.com/schedule/#cowboys-at-packers-2026-reg-6"
-  },
   {
    "kickoff": "2026-10-25T15:25:00-05:00",
    "home": false,
