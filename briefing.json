@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-20T13:42:21.032Z",
+ "updated": "2026-10-21T13:56:15.293Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -179,11 +179,17 @@
     "course": "HIST 212",
     "title": "Final project workshop · question and evidence",
     "ready": false
+   },
+   {
+    "date": "2026-11-04",
+    "course": "FRST 110",
+    "title": "Equiano · VII–VIII",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-20T13:42:21.032Z",
+  "checked": "2026-10-21T13:56:15.293Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -313,7 +319,7 @@
   },
   {
    "date": "2026-10-29",
-   "when": "October 29 · 7–8 am CT · online · free registration closes October 20",
+   "when": "October 29 · 7–8 am CT · online · registration deadline was October 20",
    "title": "Michael Levin & Chris Fields: Where do embodied minds come from?",
    "subtitle": "IOCPh 2026 keynote on the origins and scaling of embodied minds",
    "url": "https://sciforum.net/event/IOCPh2026"
