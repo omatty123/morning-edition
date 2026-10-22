@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-21T13:56:15.293Z",
+ "updated": "2026-10-22T13:53:58.432Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -185,11 +185,18 @@
     "course": "FRST 110",
     "title": "Equiano · VII–VIII",
     "ready": false
+   },
+   {
+    "date": "2026-11-05",
+    "course": "HIST 212",
+    "title": "Steppe Nomads, Genghis Khan, Eurasian Empire · Goryeo",
+    "ready": false,
+    "url": "https://drive.google.com/file/d/171KJHYOyHKLDY5VKwyrjKUkDT27DdXZY/view"
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-21T13:56:15.293Z",
+  "checked": "2026-10-22T13:53:58.432Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -319,7 +326,7 @@
   },
   {
    "date": "2026-10-29",
-   "when": "October 29 · 7–8 am CT · online · registration deadline was October 20",
+   "when": "October 29 · 7–8 am CT · online · published registration deadlines have passed",
    "title": "Michael Levin & Chris Fields: Where do embodied minds come from?",
    "subtitle": "IOCPh 2026 keynote on the origins and scaling of embodied minds",
    "url": "https://sciforum.net/event/IOCPh2026"
