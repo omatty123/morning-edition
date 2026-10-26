@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T13:38:35.658Z",
+ "updated": "2026-10-26T13:47:53.249Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -198,11 +198,17 @@
     "course": "FRST 110",
     "title": "Equiano · IX–X",
     "ready": false
+   },
+   {
+    "date": "2026-11-09",
+    "course": "FRST 110",
+    "title": "Rush · Part One",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-25T13:38:35.658Z",
+  "checked": "2026-10-26T13:47:53.249Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -237,13 +243,6 @@
   ]
  },
  "packers": [
-  {
-   "kickoff": "2026-10-25T15:25:00-05:00",
-   "home": false,
-   "opponent": "Detroit Lions",
-   "tbd": false,
-   "url": "https://www.packers.com/schedule/#packers-at-lions-2026-reg-7"
-  },
   {
    "kickoff": "2026-10-29T19:15:00-05:00",
    "home": true,
