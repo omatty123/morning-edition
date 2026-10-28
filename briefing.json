@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-27T13:49:12.730Z",
+ "updated": "2026-10-28T13:42:43.721Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -210,11 +210,17 @@
     "course": "HIST 212",
     "title": "Rise of the Samurai",
     "ready": false
+   },
+   {
+    "date": "2026-11-11",
+    "course": "FRST 110",
+    "title": "Rush · Part Two",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-27T13:49:12.730Z",
+  "checked": "2026-10-28T13:42:43.721Z",
   "items": [
    {
     "date": "2026-10-13",
