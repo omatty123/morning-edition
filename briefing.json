@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-29T13:50:15.842Z",
+ "updated": "2026-10-30T13:55:14.689Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -222,11 +222,17 @@
     "course": "HIST 212",
     "title": "Yuan Dynasty · China under Mongol Rule & Muromachi Japan",
     "ready": false
+   },
+   {
+    "date": "2026-11-13",
+    "course": "FRST 110",
+    "title": "Rush · Part Two",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-10-29T13:50:15.842Z",
+  "checked": "2026-10-30T13:55:14.689Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -261,13 +267,6 @@
   ]
  },
  "packers": [
-  {
-   "kickoff": "2026-10-29T19:15:00-05:00",
-   "home": true,
-   "opponent": "Carolina Panthers",
-   "tbd": false,
-   "url": "https://www.packers.com/schedule/#panthers-at-packers-2026-reg-8"
-  },
   {
    "kickoff": "2026-11-08T15:25:00-06:00",
    "home": false,
