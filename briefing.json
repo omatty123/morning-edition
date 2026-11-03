@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-02T14:34:05.539Z",
+ "updated": "2026-11-03T14:22:45.726Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -178,7 +178,8 @@
     "date": "2026-11-03",
     "course": "HIST 212",
     "title": "Final project workshop · question and evidence",
-    "ready": false
+    "ready": false,
+    "url": "https://docs.google.com/document/d/1KhAkrbw_UgDHYG--kZ8GXNlimzFcaSneUiW3lfKOPMA/edit"
    },
    {
     "date": "2026-11-04",
@@ -234,11 +235,18 @@
     "course": "FRST 110",
     "title": "Rush · Part Three",
     "ready": false
+   },
+   {
+    "date": "2026-11-17",
+    "course": "HIST 212",
+    "title": "Overcoming the Mongols · Ming Dynasty China",
+    "ready": false,
+    "url": "https://drive.google.com/file/d/1yUET_JwjJPyt-12WMkeTEINmUoPq9fCC/view"
    }
   ]
  },
  "jogye": {
-  "checked": "2026-11-02T14:34:05.539Z",
+  "checked": "2026-11-03T14:22:45.726Z",
   "items": [
    {
     "date": "2026-10-13",
