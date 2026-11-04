@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-03T14:22:45.726Z",
+ "updated": "2026-11-04T14:44:56.791Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -242,11 +242,17 @@
     "title": "Overcoming the Mongols · Ming Dynasty China",
     "ready": false,
     "url": "https://drive.google.com/file/d/1yUET_JwjJPyt-12WMkeTEINmUoPq9fCC/view"
+   },
+   {
+    "date": "2026-11-18",
+    "course": "FRST 110",
+    "title": "Rush · Part Three",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-11-03T14:22:45.726Z",
+  "checked": "2026-11-04T14:44:56.791Z",
   "items": [
    {
     "date": "2026-10-13",
