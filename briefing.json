@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T14:38:04.355Z",
+ "updated": "2026-11-05T15:44:04.887Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -210,7 +210,8 @@
     "date": "2026-11-10",
     "course": "HIST 212",
     "title": "Rise of the Samurai",
-    "ready": false
+    "ready": false,
+    "url": "https://drive.google.com/file/d/1e5q4Sg3mqH2Ug--xeLVHXasHL-AdVeGh/view"
    },
    {
     "date": "2026-11-11",
@@ -222,7 +223,8 @@
     "date": "2026-11-12",
     "course": "HIST 212",
     "title": "Yuan Dynasty · China under Mongol Rule & Muromachi Japan",
-    "ready": false
+    "ready": false,
+    "url": "https://drive.google.com/file/d/1BQWDgbZZlv6QaHa8qMkYVv4XYXb0CZ4X/view"
    },
    {
     "date": "2026-11-13",
@@ -253,7 +255,8 @@
     "date": "2026-11-19",
     "course": "HIST 212",
     "title": "Joseon · Families and Women",
-    "ready": false
+    "ready": false,
+    "url": "https://drive.google.com/file/d/12zB2p2FXOTFgopskz0spirPL065MuTwe/view"
    }
   ]
  },
