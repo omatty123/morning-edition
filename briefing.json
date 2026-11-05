@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-04T14:44:56.791Z",
+ "updated": "2026-11-05T14:38:04.355Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -248,11 +248,17 @@
     "course": "FRST 110",
     "title": "Rush · Part Three",
     "ready": false
+   },
+   {
+    "date": "2026-11-19",
+    "course": "HIST 212",
+    "title": "Joseon · Families and Women",
+    "ready": false
    }
   ]
  },
  "jogye": {
-  "checked": "2026-11-04T14:44:56.791Z",
+  "checked": "2026-11-05T14:38:04.355Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -379,6 +385,27 @@
    "title": "Mark Solms: Legacy Interview",
    "subtitle": "MINDinMIND · with Jane O’Rourke and guests · recording included",
    "url": "https://mindinmind.org.uk/series/mark-solms-legacy-series/"
+  },
+  {
+   "date": "2026-11-15",
+   "when": "November 15 · 11 am–1 pm CT · online · paid registration",
+   "title": "Mark Solms: What Actually Heals?",
+   "subtitle": "Freud, neuroscience and the talking cure · recording available",
+   "url": "https://www.tickettailor.com/events/bullardpsychologyconsultantsinc/2494109"
+  },
+  {
+   "date": "2026-11-28",
+   "when": "November 28 · 9 am–noon CT · online · paid registration",
+   "title": "Mark Solms: Different Types of Attachment Bonds",
+   "subtitle": "CAPCT/TICP presentation and clinical case discussion",
+   "url": "https://www.gifttool.com/registrar/ShowEventDetails?EID=33319&ID=248"
+  },
+  {
+   "date": "2026-12-08",
+   "when": "December 8 · 2–3 pm CT · online or London · paid registration",
+   "title": "Mark Solms: Freud and the Neuroscience of Mental Healing",
+   "subtitle": "Highgate Literary and Scientific Institution · online booking closes 7 am CT",
+   "url": "https://hlsi.org.uk/events/freud-and-the-neuroscience-of-mental-healing/"
   }
  ]
 }
