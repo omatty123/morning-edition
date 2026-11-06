@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-05T15:44:04.887Z",
+ "updated": "2026-11-06T14:17:30.806Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -261,7 +261,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-11-05T14:38:04.355Z",
+  "checked": "2026-11-06T14:17:30.806Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -381,6 +381,13 @@
    "title": "Michael Levin & Chris Fields: Where do embodied minds come from?",
    "subtitle": "IOCPh 2026 keynote on the origins and scaling of embodied minds",
    "url": "https://sciforum.net/event/IOCPh2026"
+  },
+  {
+   "date": "2026-11-07",
+   "when": "November 7 · 9 am–noon CT · free online · registration required",
+   "title": "Michael Levin: At the Edge of Our World Model",
+   "subtitle": "State of the World Forum · newsletter signup and Zoom registration",
+   "url": "https://www.stateoftheworld.forum/"
   },
   {
    "date": "2026-11-12",
