@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-08T14:12:14.497Z",
+ "updated": "2026-11-09T15:26:02.573Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -261,7 +261,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-11-08T14:11:56.923Z",
+  "checked": "2026-11-09T15:24:58.229Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -296,13 +296,6 @@
   ]
  },
  "packers": [
-  {
-   "kickoff": "2026-11-08T15:25:00-06:00",
-   "home": false,
-   "opponent": "New England Patriots",
-   "tbd": false,
-   "url": "https://www.packers.com/schedule/#packers-at-patriots-2026-reg-9"
-  },
   {
    "kickoff": "2026-11-15T12:00:00-06:00",
    "home": true,
@@ -388,6 +381,13 @@
    "title": "Michael Levin: At the Edge of Our World Model",
    "subtitle": "State of the World Forum · newsletter signup and Zoom registration",
    "url": "https://www.stateoftheworld.forum/"
+  },
+  {
+   "date": "2026-11-10",
+   "when": "November 10 · 9–11 pm CT · livestream or San Francisco",
+   "title": "Michael Levin: Entangled Intelligences",
+   "subtitle": "Long Now · interspecies intelligence with David Eagleman, Jaron Lanier and others · in-person waitlist",
+   "url": "https://longnow.org/entangled/"
   },
   {
    "date": "2026-11-12",
