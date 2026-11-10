@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T15:26:02.573Z",
+ "updated": "2026-11-10T14:17:15.016Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -214,9 +214,15 @@
     "url": "https://drive.google.com/file/d/1e5q4Sg3mqH2Ug--xeLVHXasHL-AdVeGh/view"
    },
    {
+    "date": "2026-11-10",
+    "course": "BUEN 594",
+    "title": "Professional ethics · professional judgment when values conflict",
+    "ready": false
+   },
+   {
     "date": "2026-11-11",
     "course": "FRST 110",
-    "title": "Rush · Part Two",
+    "title": "Rush · Part Two to p. 161",
     "ready": false
    },
    {
@@ -229,13 +235,13 @@
    {
     "date": "2026-11-13",
     "course": "FRST 110",
-    "title": "Rush · Part Two",
+    "title": "Rush · Part Three to p. 205",
     "ready": false
    },
    {
     "date": "2026-11-16",
     "course": "FRST 110",
-    "title": "Rush · Part Three",
+    "title": "Rush · Part Three to p. 264",
     "ready": false
    },
    {
@@ -246,9 +252,15 @@
     "url": "https://drive.google.com/file/d/1yUET_JwjJPyt-12WMkeTEINmUoPq9fCC/view"
    },
    {
+    "date": "2026-11-17",
+    "course": "BUEN 594",
+    "title": "Transition to internship · experiential-learning approval process and course synthesis",
+    "ready": false
+   },
+   {
     "date": "2026-11-18",
     "course": "FRST 110",
-    "title": "Rush · Part Three",
+    "title": "Workshop and Review",
     "ready": false
    },
    {
@@ -261,7 +273,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-11-09T15:24:58.229Z",
+  "checked": "2026-11-10T14:15:23.988Z",
   "items": [
    {
     "date": "2026-10-13",
@@ -397,11 +409,25 @@
    "url": "https://mindinmind.org.uk/series/mark-solms-legacy-series/"
   },
   {
+   "date": "2026-11-13",
+   "when": "November 13 · 7:30–9 pm CT · Appleton or livestream",
+   "title": "Lawrence University Choirs Concert",
+   "subtitle": "Lawrence Memorial Chapel · open to the public",
+   "url": "https://www.lawrence.edu/event/lawrence-university-choirs-concert-261113/"
+  },
+  {
    "date": "2026-11-15",
    "when": "November 15 · 11 am–1 pm CT · online · paid registration",
    "title": "Mark Solms: What Actually Heals?",
-   "subtitle": "Freud, neuroscience and the talking cure · recording available",
-   "url": "https://www.tickettailor.com/events/bullardpsychologyconsultantsinc/2494109"
+   "subtitle": "Freud, neuroscience and the talking cure · registrants receive 90-day recording access",
+   "url": "https://www.drbullard.com/events/mark-solms"
+  },
+  {
+   "date": "2026-11-15",
+   "when": "November 15 · 11 am–12:30 pm CT · Appleton or livestream",
+   "title": "String Chamber Music Recital",
+   "subtitle": "Harper Hall, Lawrence University · open to the public",
+   "url": "https://www.lawrence.edu/event/string-chamber-music-recital-261115/"
   },
   {
    "date": "2026-11-28",
@@ -416,6 +442,13 @@
    "title": "Mark Solms: Freud and the Neuroscience of Mental Healing",
    "subtitle": "Highgate Literary and Scientific Institution · online booking closes 7 am CT",
    "url": "https://hlsi.org.uk/events/freud-and-the-neuroscience-of-mental-healing/"
+  },
+  {
+   "date": "2027-02-11",
+   "when": "February 11, 2027 · 10 am–1 pm CT · online · paid registration",
+   "title": "Mark Solms: Clinical Masterclass",
+   "subtitle": "MINDinMIND · neuropsychoanalysis and therapeutic change · recording included",
+   "url": "https://mindinmind.org.uk/series/mark-solms-legacy-series/"
   }
  ]
 }
