@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T14:17:15.016Z",
+ "updated": "2026-11-11T14:51:32.788Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -228,7 +228,7 @@
    {
     "date": "2026-11-12",
     "course": "HIST 212",
-    "title": "Yuan Dynasty · China under Mongol Rule & Muromachi Japan",
+    "title": "Yuan Dynasty · China under Mongol Rule & Muromachi Japan · working argument due; instructor conference",
     "ready": false,
     "url": "https://drive.google.com/file/d/1BQWDgbZZlv6QaHa8qMkYVv4XYXb0CZ4X/view"
    },
@@ -269,12 +269,41 @@
     "title": "Joseon · Families and Women",
     "ready": false,
     "url": "https://drive.google.com/file/d/12zB2p2FXOTFgopskz0spirPL065MuTwe/view"
+   },
+   {
+    "date": "2026-11-22",
+    "course": "FRST 110",
+    "title": "Final Synthesis and Final Literacy Reflection due",
+    "ready": false,
+    "url": "https://docs.google.com/document/d/1d8I3q-VuBhClmQwXw0kC4DDju7ViL9V9w40C7kVJjYg/edit"
+   },
+   {
+    "date": "2026-11-22",
+    "course": "HIST 212",
+    "title": "Final project due · 3 pm",
+    "ready": false,
+    "url": "https://docs.google.com/document/d/1xoUbWKkMmkmHGG9bTIdEqKdNdAvo3atujvqG58j-dqU/edit"
    }
   ]
  },
  "jogye": {
-  "checked": "2026-11-10T14:15:23.988Z",
+  "checked": "2026-11-11T14:49:43.269Z",
   "items": [
+   {
+    "date": "2026-11-10",
+    "title": "Buddhist Leaders from Korea, China, and Japan Pray for World Peace at the Millennium-Old Bulguksa Temple",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1548"
+   },
+   {
+    "date": "2026-11-10",
+    "title": "Jogye Order’s Social Affairs Office Hosts 2026 Overseas Buddhism Seminar",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1547"
+   },
+   {
+    "date": "2026-11-10",
+    "title": "The Jogye Order Marks the 46th Anniversary of the October 27 Dharma Persecution",
+    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1546"
+   },
    {
     "date": "2026-10-13",
     "title": "Most Ven. Jinwoo Inaugurated as the 38th President of the Jogye Order",
@@ -289,21 +318,6 @@
     "date": "2026-09-09",
     "title": "Most Ven. Jinwoo Elected as the 38th President of the Jogye Order",
     "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1539"
-   },
-   {
-    "date": "2026-09-07",
-    "title": "[Dharma Talk on the Conclusion of the Summer Retreat in the Year of the Fire Horse]",
-    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1530"
-   },
-   {
-    "date": "2026-09-07",
-    "title": "The Jogye Order of Korean Buddhism Issues Statement on Disaster in Nepal",
-    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1529"
-   },
-   {
-    "date": "2026-09-07",
-    "title": "Eighth Graduation Ceremony Successfully Held at Borigaram Agricultural Technical College in Tanzania",
-    "url": "https://www.jokb.org/bbs/board.php?bo_table=0010&wr_id=1528"
    }
   ]
  },
@@ -416,6 +430,13 @@
    "url": "https://www.lawrence.edu/event/lawrence-university-choirs-concert-261113/"
   },
   {
+   "date": "2026-11-14",
+   "when": "November 14 · 7:30–9 pm CT · Appleton or livestream",
+   "title": "Lawrence Symphony Orchestra Concert",
+   "subtitle": "Lawrence Memorial Chapel · Rossini and Brahms · open to the public",
+   "url": "https://www.lawrence.edu/event/lawrence-symphony-orchestra-lso-concert-261114/"
+  },
+  {
    "date": "2026-11-15",
    "when": "November 15 · 11 am–1 pm CT · online · paid registration",
    "title": "Mark Solms: What Actually Heals?",
@@ -425,7 +446,7 @@
   {
    "date": "2026-11-15",
    "when": "November 15 · 11 am–12:30 pm CT · Appleton or livestream",
-   "title": "String Chamber Music Recital",
+   "title": "Student Chamber Music Recital",
    "subtitle": "Harper Hall, Lawrence University · open to the public",
    "url": "https://www.lawrence.edu/event/string-chamber-music-recital-261115/"
   },
