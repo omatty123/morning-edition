@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T14:51:32.788Z",
+ "updated": "2026-11-12T14:44:18.179Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -228,9 +228,9 @@
    {
     "date": "2026-11-12",
     "course": "HIST 212",
-    "title": "Yuan Dynasty · China under Mongol Rule & Muromachi Japan · working argument due; instructor conference",
+    "title": "Yuan Dynasty · China under Mongol Rule & Muromachi Japan",
     "ready": false,
-    "url": "https://drive.google.com/file/d/1BQWDgbZZlv6QaHa8qMkYVv4XYXb0CZ4X/view"
+    "url": "https://drive.google.com/file/d/1bkaZ8ubQ5_FYqC4Bcjk4NvVNrI4x8ENU/view"
    },
    {
     "date": "2026-11-13",
@@ -256,6 +256,13 @@
     "course": "BUEN 594",
     "title": "Transition to internship · experiential-learning approval process and course synthesis",
     "ready": false
+   },
+   {
+    "date": "2026-11-17",
+    "course": "HIST 212",
+    "title": "Working argument and conference · guide: Nov 17, 11:59 pm CT; syllabus: Nov 12",
+    "ready": false,
+    "url": "https://docs.google.com/document/d/1KhAkrbw_UgDHYG--kZ8GXNlimzFcaSneUiW3lfKOPMA/edit"
    },
    {
     "date": "2026-11-18",
@@ -287,7 +294,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-11-11T14:49:43.269Z",
+  "checked": "2026-11-12T14:42:02.535Z",
   "items": [
    {
     "date": "2026-11-10",
