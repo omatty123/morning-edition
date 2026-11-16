@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-15T14:09:18Z",
+ "updated": "2026-11-16T15:46:02.248Z",
  "classes": [
   {
    "course": "FRST 110",
@@ -294,7 +294,7 @@
   ]
  },
  "jogye": {
-  "checked": "2026-11-15T14:09:18Z",
+  "checked": "2026-11-16T15:46:02.248Z",
   "items": [
    {
     "date": "2026-11-10",
@@ -329,13 +329,6 @@
   ]
  },
  "packers": [
-  {
-   "kickoff": "2026-11-15T12:00:00-06:00",
-   "home": true,
-   "opponent": "Minnesota Vikings",
-   "tbd": false,
-   "url": "https://www.packers.com/schedule/#vikings-at-packers-2026-reg-10"
-  },
   {
    "kickoff": "2026-11-25T19:00:00-06:00",
    "home": false,
