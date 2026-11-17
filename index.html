@@ -261,6 +261,16 @@ const addDays=(s,n)=>{const d=ymdDate(s);d.setUTCDate(d.getUTCDate()+n);return c
 const short=s=>fmt(ymdDate(s),{month:"short",day:"numeric"});
 const checked=t=>t?`Checked ${fmt(new Date(t),{month:"short",day:"numeric"})}, ${fmt(new Date(t),{hour:"numeric",minute:"2-digit"})} CT`:"";
 
+// Bound every live-source request so a slow provider cannot lock Refresh.
+async function fetchJSON(url,options={}){
+  const controller=new AbortController();
+  const timer=setTimeout(()=>controller.abort(),7000);
+  try{
+    const response=await fetch(url,{...options,signal:controller.signal});
+    if(!response.ok)throw new Error(`HTTP ${response.status}`);
+    return await response.json();
+  }finally{clearTimeout(timer)}
+}
 // last-good cache so a failed source still shows its last result
 const cache={get(k){try{return JSON.parse(localStorage.getItem("me:"+k))}catch(e){return null}},set(k,v){try{localStorage.setItem("me:"+k,JSON.stringify(v))}catch(e){}}};
 async function source(key,load){
@@ -330,7 +340,7 @@ function renderPackers(){
 }
 async function loadBrewers(){
   const c=ct(),end=addDays(c.ymd,30);
-  const r=await source("brewers",async()=>{const j=await (await fetch(`https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=158&startDate=${c.ymd}&endDate=${end}&hydrate=team`)).json();
+  const r=await source("brewers",async()=>{const j=await fetchJSON(`https://statsapi.mlb.com/api/v1/schedule?sportId=1&teamId=158&startDate=${c.ymd}&endDate=${end}&hydrate=team`);
     return j.dates.flatMap(d=>d.games).map(g=>{const home=g.teams.home.team.id===158,o=home?g.teams.away.team:g.teams.home.team;
       return {when:g.gameDate,tbd:!!g.status.startTimeTBD,home,opp:o.abbreviation||o.teamName||o.name,label:g.gameType==="R"?"":(g.description||g.seriesDescription||"").replace(/ '[A-Z]'/,""),url:"https://www.mlb.com/brewers/schedule",state:g.status.abstractGameState}})});
   const g=(r.data||[]).filter(x=>x.state!=="Final").slice(0,2);
@@ -339,22 +349,57 @@ async function loadBrewers(){
 }
 
 // --- weather ---
+const WX_URL="https://api.open-meteo.com/v1/forecast?latitude=44.2619&longitude=-88.4154&current=temperature_2m,is_day,weather_code,wind_speed_10m,wind_direction_10m&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=America%2FChicago";
+function weatherLabel(code){
+  if(code===0)return "Clear";
+  if(code===1)return "Mostly clear";
+  if(code===2)return "Partly cloudy";
+  if(code===3)return "Overcast";
+  if([45,48].includes(code))return "Fog";
+  if(code>=51&&code<=57)return "Drizzle";
+  if(code>=61&&code<=67)return "Rain";
+  if(code>=71&&code<=77)return "Snow";
+  if(code>=80&&code<=82)return "Rain showers";
+  if([85,86].includes(code))return "Snow showers";
+  if(code>=95)return "Thunderstorms";
+  return "Current conditions";
+}
+async function currentWeather(){
+  const j=await fetchJSON(WX_URL),p=j.current;
+  if(!p||!Number.isFinite(p.temperature_2m)||!Number.isFinite(p.weather_code)||!Number.isFinite(p.wind_speed_10m)||!Number.isFinite(p.wind_direction_10m)||!/^\d{4}-\d\d-\d\dT\d\d:\d\d/.test(p.time)||!Number.isFinite(j.utc_offset_seconds))throw new Error("Invalid current weather");
+  const observedAt=new Date(Date.parse(p.time+"Z")-j.utc_offset_seconds*1000).toISOString();
+  if(Date.now()-Date.parse(observedAt)>2*3600e3||Date.parse(observedAt)>Date.now()+3600e3)throw new Error("Stale current weather");
+  const dir=["N","NNE","NE","ENE","E","ESE","SE","SSE","S","SSW","SW","WSW","W","WNW","NW","NNW"][Math.round(p.wind_direction_10m/22.5)%16];
+  return {temperature:Math.round(p.temperature_2m),temperatureUnit:"F",name:"Now",shortForecast:weatherLabel(p.weather_code),isDaytime:!!p.is_day,windSpeed:Math.round(p.wind_speed_10m)+" mph",windDirection:dir,provider:"Open-Meteo",observedAt};
+}
+async function nwsWeather(){
+  const j=await fetchJSON("https://api.weather.gov/gridpoints/GRB/66,20/forecast",{headers:{Accept:"application/geo+json"}});
+  const p=j?.properties?.periods?.find(p=>Date.parse(p.endTime)>Date.now());
+  if(!p||!Number.isFinite(p.temperature)||typeof p.shortForecast!=="string")throw new Error("Invalid forecast");
+  return {...p,name:`${p.name} forecast ${p.isDaytime?"high":"low"}`,provider:"NWS"};
+}
 async function loadWeather(){
-  const r=await source("weather",async()=>{const j=await (await fetch("https://api.weather.gov/gridpoints/GRB/66,20/forecast",{headers:{Accept:"application/geo+json"}})).json();return j.properties.periods[0]});
-  const p=r.data;if(!p){$("wx-desc").textContent="Forecast unavailable";return}
+  const r=await source("weather-v2",async()=>{try{return await currentWeather()}catch(e){return await nwsWeather()}});
+  const p=r.data;
+  const stale=!r.ok&&(!r.at||Date.now()-Date.parse(r.at)>2*3600e3);
+  if(!p||stale){
+    $("wx-temp").textContent="—";$("wx-icon").innerHTML="";$("wx-wind").textContent="";
+    $("wx-desc").textContent="Weather temporarily unavailable";
+    $("wx-note").textContent="Try Refresh sources or open the NWS forecast.";return;
+  }
   const f=p.shortForecast.toLowerCase();
-  const ic=/rain|shower|storm|drizzle/.test(f)?"rain":/fog|haze|smoke/.test(f)?"fog":/cloud|overcast/.test(f)&&!/partly|mostly clear|mostly sunny/.test(f)?"cloud":p.isDaytime?"sun":"moon";
+  const ic=/rain|shower|storm|drizzle|snow/.test(f)?"rain":/fog|haze|smoke/.test(f)?"fog":/cloud|overcast/.test(f)&&!/partly|mostly clear|mostly sunny/.test(f)?"cloud":p.isDaytime?"sun":"moon";
   $("wx-icon").innerHTML=`<svg><use href="#${ic}"/></svg>`;
   $("wx-temp").textContent=p.temperature+"°"+p.temperatureUnit;
   $("wx-desc").textContent=`${p.name} · ${p.shortForecast}`;
   $("wx-wind").textContent=`${p.windSpeed} ${p.windDirection}`;
-  $("wx-note").textContent=srcNote(r);
+  $("wx-note").textContent=`${p.provider} · ${srcNote(r,p.observedAt||r.at)}`;
 }
 
 // --- reading ---
 const entry=(who,date,title,url,flag)=>`<a class="entry" href="${esc(url)}"><div class="m"><span>${esc(who)}</span><span>${short(date)}</span></div><div class="tt">${esc(title)}</div>${flag?`<div class="fl">${esc(flag)}</div>`:""}</a>`;
 async function loadDesk(){
-  const r=await source("desk",async()=>(await fetch(DESK,{cache:"no-store"})).json());
+  const r=await source("desk",async()=>fetchJSON(DESK,{cache:"no-store"}));
   if(!r.data){$("desk").innerHTML="";$("desk-src").textContent=srcNote(r);return}
   const items=[...r.data.items].sort((a,b)=>b.date.localeCompare(a.date));
   const pick=["levin","solms"].map(w=>items.find(i=>i.who===w)).filter(Boolean).sort((a,b)=>b.date.localeCompare(a.date));
@@ -362,7 +407,7 @@ async function loadDesk(){
   $("desk-src").textContent=srcNote(r,r.data.last_checked);
 }
 async function loadLevin(){
-  const r=await source("levin",async()=>{const j=await (await fetch("https://thoughtforms.life/wp-json/wp/v2/posts?per_page=1&_fields=title,link,date")).json();
+  const r=await source("levin",async()=>{const j=await fetchJSON("https://thoughtforms.life/wp-json/wp/v2/posts?per_page=1&_fields=title,link,date");
     const t=document.createElement("textarea");t.innerHTML=j[0].title.rendered;return {title:t.value,url:j[0].link,date:j[0].date.slice(0,10)}});
   $("levin").innerHTML=r.data?entry("Michael Levin",r.data.date,r.data.title,r.data.url):"";
   $("levin-note").textContent=srcNote(r);
@@ -378,9 +423,9 @@ function renderEvents(){
 
 async function loadAll(){
   const btn=$("refresh");btn.disabled=true;
-  try{B=await (await fetch("briefing.json",{cache:"no-store"})).json();cache.set("briefing",B)}catch(e){B=cache.get("briefing")}
+  try{B=await fetchJSON("briefing.json",{cache:"no-store"});cache.set("briefing",B)}catch(e){B=cache.get("briefing")}
   if(B){renderClasses();renderPrep();renderPackers();renderJogye();renderEvents()}
-  await Promise.all([loadWeather(),loadBrewers(),loadDesk(),loadLevin()]);
+  await Promise.allSettled([loadWeather(),loadBrewers(),loadDesk(),loadLevin()]);
   btn.disabled=false;
 }
 $("refresh").onclick=loadAll;
@@ -389,3 +434,4 @@ loadAll();
 </script>
 </body>
 </html>
+
